@@ -1,0 +1,15 @@
+# Load the necessary assemblies for displaying input boxes
+Add-Type -AssemblyName Microsoft.VisualBasic
+Add-Type -AssemblyName System.Windows.Forms
+
+# Display the input box for the first input
+$firstInput = [Microsoft.VisualBasic.Interaction]::InputBox("Enter the first input", "First Input")
+$firstInputNoSpaces = $firstInput -replace ' ', ''
+
+# Display the input box for the second input
+$secondInput = [Microsoft.VisualBasic.Interaction]::InputBox("Enter the second input", "Second Input")
+$secondInputNoSpaces = $secondInput -replace ' ', ''
+
+# Display the inputs without spaces to verify
+Write-Host "First Input (without spaces): $firstInputNoSpaces"
+Write-Host "Second Input (without spaces): $secondInputNoSpaces"
