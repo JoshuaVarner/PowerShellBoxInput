@@ -1,0 +1,18 @@
+# Load the necessary assembly for displaying message boxes
+Add-Type -AssemblyName System.Windows.Forms
+
+# Create the input message box for the first input
+$firstInputBox = New-Object System.Windows.Forms.InputBox
+$firstInputBox.Text = "Enter the first input"
+$firstInputBox.ShowDialog()
+$firstInput = $firstInputBox.Input.Text -replace ' ', ''
+
+# Create the input message box for the second input
+$secondInputBox = New-Object System.Windows.Forms.InputBox
+$secondInputBox.Text = "Enter the second input"
+$secondInputBox.ShowDialog()
+$secondInput = $secondInputBox.Input.Text -replace ' ', ''
+
+# Display the inputs without spaces to verify
+Write-Host "First Input (without spaces): $firstInput"
+Write-Host "Second Input (without spaces): $secondInput"
