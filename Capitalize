@@ -1,0 +1,11 @@
+# Get the TextInfo object for the current culture
+$textInfo = [System.Globalization.CultureInfo]::CurrentCulture.TextInfo
+
+# The input string
+$inputString = "example string"
+
+# Capitalize the string
+$capitalizedString = $textInfo.ToTitleCase($inputString.ToLower())
+
+# Display the result
+Write-Host "Capitalized string: $capitalizedString"
